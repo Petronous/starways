@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://duhkt1afgsmed"]
+
+[ext_resource type="Script" path="res://starlane.gd" id="1_65bpw"]
+
+[node name="starlane" type="Line2D"]
+z_index = -1
+default_color = Color(0.64, 0.64, 0.64, 0.898039)
+antialiased = true
+script = ExtResource("1_65bpw")
