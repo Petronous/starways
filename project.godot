@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Starways"
-run/main_scene="res://world.tscn"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://star.svg"
+config/icon="res://assets/star.svg"
 
 [display]
 

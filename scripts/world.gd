@@ -1,3 +1,4 @@
+class_name World
 extends Node2D
 
 @export var star_scene: PackedScene
@@ -5,8 +6,8 @@ extends Node2D
 @export var worldsize: int = 4
 
 var stars:Array[Star] = []
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+
+func _enter_tree() -> void:
 	for x in range(worldsize):
 		for y in range(worldsize):
 			var pos_scale = 150
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 func make_star(x:int, y:int):
 	var star:Star = star_scene.instantiate()
 	star.set_pos(x, y)
+	star.world = self
 	add_child(star)
 	stars.append(star)
 
