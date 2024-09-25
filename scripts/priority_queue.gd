@@ -42,6 +42,7 @@ func _swap(i: int, j: int) -> void:
 
 func _bubble_up(i: int) -> void:
 	while i > 1: 
+		@warning_ignore("integer_division")
 		if priorities[i/2] < priorities[i]: _swap(i, i/2)
 		else: break
 		i /= 2

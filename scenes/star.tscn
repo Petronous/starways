@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0a3p8fubierj"]
+[gd_scene load_steps=6 format=3 uid="uid://b0a3p8fubierj"]
 
 [ext_resource type="Script" path="res://scripts/star.gd" id="1_1gaim"]
+[ext_resource type="Material" uid="uid://v22kpr4m253w" path="res://scenes/color_tinter.tres" id="2_x6jdw"]
 [ext_resource type="Texture2D" uid="uid://cnj3y34q11xce" path="res://assets/star.png" id="2_yvp05"]
+[ext_resource type="Script" path="res://scenes/armies_visualiser.gd" id="3_8sdix"]
+[ext_resource type="Script" path="res://scripts/star_sprite.gd" id="4_7mxvl"]
 
-[node name="star" type="Node2D"]
+[node name="Star" type="Node2D"]
 script = ExtResource("1_1gaim")
 
-[node name="starsprite" type="Sprite2D" parent="."]
+[node name="StarSprite" type="Sprite2D" parent="."]
+texture_filter = 6
+material = ExtResource("2_x6jdw")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_yvp05")
+script = ExtResource("4_7mxvl")
 
-[node name="stored" type="Label" parent="."]
+[node name="StoredLabel" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -11.0
 offset_right = 20.0
@@ -21,3 +27,20 @@ justification_flags = 0
 clip_text = true
 text_overrun_behavior = 1
 max_lines_visible = 1
+
+[node name="CycleTimer" type="Timer" parent="."]
+wait_time = 0.33
+
+[node name="ProductionTimer" type="Timer" parent="."]
+
+[node name="ArmiesVisualiser" type="Node2D" parent="."]
+script = ExtResource("3_8sdix")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 12.0
+offset_right = 58.0
+offset_bottom = 35.0
+
+[connection signal="timeout" from="CycleTimer" to="." method="cycle"]
+[connection signal="timeout" from="ProductionTimer" to="." method="produce"]

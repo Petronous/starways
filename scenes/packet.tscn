@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3kx33ok0wrdv"]
+
+[ext_resource type="Script" path="res://scripts/packet.gd" id="1_a4h3v"]
+[ext_resource type="Texture2D" uid="uid://dalboppu3v4qb" path="res://assets/packet.png" id="2_ynt0d"]
+
+[node name="Packet" type="Node2D"]
+z_index = -1
+script = ExtResource("1_a4h3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_ynt0d")

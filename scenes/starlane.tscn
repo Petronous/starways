@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/starlane.gd" id="1_65bpw"]
 
-[node name="starlane" type="Line2D"]
-z_index = -1
+[node name="Starlane" type="Line2D"]
+z_index = -2
 default_color = Color(0.64, 0.64, 0.64, 0.898039)
 antialiased = true
 script = ExtResource("1_65bpw")

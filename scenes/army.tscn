@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://577022juycst"]
+
+[ext_resource type="Texture2D" uid="uid://bvm0mrwf0gtso" path="res://assets/army.png" id="1_1hssl"]
+
+[node name="Army" type="Sprite2D"]
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_1hssl")
+offset = Vector2(0, -1350)

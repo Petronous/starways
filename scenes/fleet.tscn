@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2bbxc03bi454"]
+
+[ext_resource type="PackedScene" uid="uid://577022juycst" path="res://scenes/army.tscn" id="1_31yc2"]
+[ext_resource type="Script" path="res://scenes/fleet.gd" id="1_oqcrd"]
+
+[node name="Fleet" type="Node2D"]
+z_index = -1
+script = ExtResource("1_oqcrd")
+
+[node name="Army" parent="." instance=ExtResource("1_31yc2")]
+position = Vector2(0, -5.96046e-08)
+rotation = 1.5708
+scale = Vector2(0.04, 0.04)
+offset = Vector2(0, 0)
