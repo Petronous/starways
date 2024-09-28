@@ -2,8 +2,6 @@ class_name World
 extends Node2D
 
 @export var worldsize: int = 4
-var bg_mat: ShaderMaterial
-
 
 var stars: StarCollection = StarCollection.new()
 var requests: PriorityQueue = PriorityQueue.new()
@@ -40,8 +38,6 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	bg_mat = $CanvasLayer/ColorRect.material
-	redraw_bg()
 	running = true
 
 
@@ -57,30 +53,6 @@ func make_empire(star: Star) -> void:
 	empires.append(emp)
 	emp.conquer(star)
 	star.army = 3
-
-func redraw_bg(shift:Vector2 = Vector2(0., 0.)) -> void:
-	pass
-	#var stars_num: int = stars.stars.size()
-	#assert(stars_num <= 1024)
-	#bg_mat.set_shader_parameter("stars_num", stars_num)
-	#var stars_pos: PackedVector2Array = []
-	#var stars_col: PackedVector3Array = []
-	#stars_pos.resize(1024)
-	#stars_col.resize(1024)
-	#var size: float = min(get_viewport_rect().size.x, get_viewport_rect().size.y)
-	#for i in range(stars_num):
-		#var star: Star = stars.stars[i]
-		#var pos: Vector2 = star.get_global_transform_with_canvas().origin - shift
-		#pos.x /= size
-		#pos.y /= size
-		#stars_pos[i] = pos
-		#var col: Color = star.empire.color
-		#if star.empire.neutral(): col = Color(0.1,0.1,0.1,1)
-		#stars_col[i] = Vector3(col.r, col.g, col.b)
-	#bg_mat.set_shader_parameter("stars_pos", stars_pos)
-	#bg_mat.set_shader_parameter("stars_cols", stars_col)
-	#bg_mat.set_shader_parameter("scale", $Camera2D.zoom.x)
-	#$CanvasLayer/ColorRect.queue_redraw()
 
 func _pos_to_id(x:int, y:int, xsz:int) -> int:
 	return x*xsz + y

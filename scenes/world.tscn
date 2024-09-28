@@ -1,19 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvo84u4k8ghlh"]
+[gd_scene load_steps=3 format=3 uid="uid://dvo84u4k8ghlh"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_oxh23"]
-[ext_resource type="Shader" path="res://scripts/background.gdshader" id="2_046ea"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="2_dgljf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpj8k"]
-shader = ExtResource("2_046ea")
-shader_parameter/stars_pos = PackedVector2Array(0.6, 0.4, 0.5, 0.3, 0.7, 0.3)
-shader_parameter/stars_cols = PackedVector3Array(1, 0, 1, 1, 0, 1, 1, 0.5, 0)
-shader_parameter/stars_num = 3
-shader_parameter/scale = 1.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_oxh23")
-worldsize = 20
+worldsize = 16
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_dgljf")
@@ -29,13 +21,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-visible = false
-z_index = -10
-material = SubResource("ShaderMaterial_wpj8k")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2

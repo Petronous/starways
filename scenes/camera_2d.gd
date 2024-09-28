@@ -15,6 +15,5 @@ func mult_zoom(mult:float) -> void:
 	var prev := get_local_mouse_position()
 	zoom *= mult
 	var curr := get_local_mouse_position()
-	get_parent().redraw_bg((prev - curr)*zoom.x)
 	position += prev - curr
 	

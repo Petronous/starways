@@ -37,6 +37,7 @@ wait_time = 0.33
 script = ExtResource("3_8sdix")
 
 [node name="DebugLabel" type="Label" parent="."]
+visible = false
 offset_left = 18.0
 offset_top = 12.0
 offset_right = 58.0

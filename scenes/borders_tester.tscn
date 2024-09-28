@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfp6acq0hvcti"]
+
+[ext_resource type="Script" path="res://scenes/borders_tester.gd" id="1_plpgn"]
+[ext_resource type="Texture2D" uid="uid://cnj3y34q11xce" path="res://assets/star.png" id="2_tjpfr"]
+
+[node name="BordersTester" type="Node2D"]
+script = ExtResource("1_plpgn")
+
+[node name="Laser" type="Line2D" parent="."]
+
+[node name="circle" type="Sprite2D" parent="."]
+position = Vector2(1142, 595)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_tjpfr")

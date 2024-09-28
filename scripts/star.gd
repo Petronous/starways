@@ -66,7 +66,7 @@ func _ready() -> void:
 	pick_behavior()
 	behavior.call()
 	await get_tree().create_timer(randf()*cycle_interval).timeout
-	$CycleTimer.start(cycle_interval)
+	$CycleTimer.start(cycle_interval*randf())
 
 
 
@@ -98,6 +98,7 @@ func cycle() -> void:
 	look_through_neighbors()
 	pick_behavior()
 	behavior.call()
+	$CycleTimer.start(cycle_interval)
 	
 func look_through_neighbors() -> void:
 	enemies = []
@@ -185,7 +186,6 @@ func set_pos(x: float, y: float) -> void:
 	
 func set_empire(em: Empire) -> void:
 	empire = em
-	if world.running: world.redraw_bg()
 	if empire != null: start_prod_timer(1)
 	$StarSprite.material = empire.material
 	requests = empire.requests
@@ -200,4 +200,3 @@ func set_empire(em: Empire) -> void:
 		#if pair[0] == target:
 			#return pair[1]
 	#return null
-	
