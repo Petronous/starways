@@ -7,8 +7,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("zoom_out"): target_zoom /= 1.1
 	
 	
-func _process(dt: float) -> void:
-	if target_zoom < zoom.x*.99 or target_zoom > zoom.x*1.01: mult_zoom((target_zoom/zoom.x))
+func _process(_dt: float) -> void:
+	if target_zoom < zoom.x*.99 or target_zoom > zoom.x*1.01: mult_zoom(sqrt(target_zoom/zoom.x))
 	
 	
 func mult_zoom(mult:float) -> void:

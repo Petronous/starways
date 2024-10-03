@@ -8,6 +8,7 @@ var end: Star
 func _ready() -> void:
 	pass # Replace with function body.
 
+@warning_ignore("shadowed_variable")
 func send(start: Star, end: Star) -> void:
 	ler = Lerp.new(start.position, end.position, finish)
 	add_child(ler)
