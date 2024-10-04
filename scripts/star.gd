@@ -7,7 +7,7 @@ enum {
 	REQ_ENEMY,
 }
 
-const max_prog: float = 8
+const max_prog: float = 4
 const cycle_interval: float = .33
 const fleet_template: PackedScene = preload("res://scenes/fleet.tscn")
 const packet_template: PackedScene = preload("res://scenes/packet.tscn")

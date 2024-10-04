@@ -6,9 +6,10 @@ var star2: Node2D
 var length: float
 const INNER := 1
 const BORDER := 2
+var base_color: Color = default_color
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,4 +27,4 @@ func initialize(s1:Node2D, s2:Node2D):
 func set_color(col: Color) -> void:
 	default_color = col
 func set_neutral() -> void:
-	default_color = Color.DARK_GRAY
+	default_color = base_color

@@ -5,7 +5,7 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_oxh23")
-worldsize = 16
+worldsize = 32
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_dgljf")
